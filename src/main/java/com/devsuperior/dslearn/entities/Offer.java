@@ -18,7 +18,10 @@ public class Offer implements Serializable {
 
     private Long id;
     private String edition;
+    @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
     private Instant starMoment;
+
+    @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
     private Instant endMoment;
 
     @ManyToOne
