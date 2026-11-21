@@ -5,6 +5,8 @@ import com.devsuperior.dslearn.entities.enums.ResourceType;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 
@@ -26,6 +28,9 @@ public class Resource implements Serializable {
     //cria chave estrangeira na tb
     @JoinColumn(name = "offer_id")
     private Offer offer;
+
+    @OneToMany(mappedBy = "resource")
+    private List<Section> sections = new ArrayList<>();
 
     public Resource() {
     }
