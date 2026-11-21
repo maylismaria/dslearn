@@ -1,0 +1,97 @@
+package com.devsuperior.dslearn.entities;
+
+import jakarta.persistence.*;
+
+import java.io.Serializable;
+import java.time.Instant;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
+@Entity
+@Table(name = "tb_offer")
+public class Offer implements Serializable {
+    private static final long seriaLVersionUID =1L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    private Long id;
+    private String edition;
+    private Instant starMoment;
+    private Instant endMoment;
+
+    @ManyToOne
+    //cria chave estrangeira na tb
+    @JoinColumn(name = "course_id")
+    private Course course;
+
+    @OneToMany(mappedBy = "offer")
+    private List<Resource> resources = new ArrayList<>();
+    public Offer() {
+    }
+
+    public Offer(Long id, String edition, Instant starMoment, Instant endMoment, Course course) {
+        this.id = id;
+        this.edition = edition;
+        this.starMoment = starMoment;
+        this.endMoment = endMoment;
+        this.course = course;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getEdition() {
+        return edition;
+    }
+
+    public void setEdition(String edition) {
+        this.edition = edition;
+    }
+
+    public Instant getStarMoment() {
+        return starMoment;
+    }
+
+    public void setStarMoment(Instant starMoment) {
+        this.starMoment = starMoment;
+    }
+
+    public Instant getEndMoment() {
+        return endMoment;
+    }
+
+    public void setEndMoment(Instant endMoment) {
+        this.endMoment = endMoment;
+    }
+
+    public Course getCourse() {
+        return course;
+    }
+
+    public void setCourse(Course course) {
+        this.course = course;
+    }
+
+    public List<Resource> getResources() {
+        return resources;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Offer offer = (Offer) o;
+        return Objects.equals(id, offer.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(id);
+    }
+}

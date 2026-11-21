@@ -15,4 +15,10 @@ INSERT INTO tb_user_role (user_id, role_id) VALUES (3, 3);
 
 INSERT INTO tb_course (name, img_Uri, img_Gray_Uri) VALUES ('Bootcamp Html', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR918l6_bKwnkwHB0CG-JpAfSRqcc5Es-JhRqmpguvHAClzXMMtsqSnk5dM&s=10', 'https://www.libras.com.br/ct__images/biografias/_v/ferdinand-berthier/ferdinand-berthier-800x800.webp');
 
+INSERT INTO tb_offer (edition, star_Moment, end_Moment, course_id) VALUES ('1.0', TIMESTAMP WITH TIME ZONE '2020-10-20T03:00:00Z', TIMESTAMP WITH TIME ZONE '2021-10-14T03:00:00Z', '1');
+INSERT INTO tb_offer (edition, star_Moment, end_Moment, course_id) VALUES ('2.0', TIMESTAMP WITH TIME ZONE '2020-12-20T03:00:00Z', TIMESTAMP WITH TIME ZONE '2021-12-14T03:00:00Z', '1');
+
+INSERT INTO tb_resource (title, description, position, img_Uri, type, offer_id) VALUES ('Trilha HTML', 'Trilha principal', 1, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR918l6_bKwnkwHB0CG-JpAfSRqcc5Es-JhRqmpguvHAClzXMMtsqSnk5dM&s=10', 1 , 1);
+INSERT INTO tb_resource (title, description, position, img_Uri, type, offer_id) VALUES ('FORUM', 'Tire suas dúvidas', 2, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR918l6_bKwnkwHB0CG-JpAfSRqcc5Es-JhRqmpguvHAClzXMMtsqSnk5dM&s=10', 2 , 1);
+INSERT INTO tb_resource (title, description, position, img_Uri, type, offer_id) VALUES ('Lives', 'Lives para turma', 3, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR918l6_bKwnkwHB0CG-JpAfSRqcc5Es-JhRqmpguvHAClzXMMtsqSnk5dM&s=10', 0 , 1);
 
